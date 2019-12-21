@@ -12,7 +12,7 @@ public class AsIntStream implements IntStream {
 
     private AsIntStream(int... numbers) {
         stream = new ArrayList<>();
-        for (Integer num : numbers) {
+        for (int num : numbers) {
             stream.add(num);
         }
     }
@@ -38,8 +38,8 @@ public class AsIntStream implements IntStream {
         if (stream.isEmpty()) {
             throw new IllegalArgumentException();
         }
-        Integer m = Integer.MIN_VALUE;
-        for (Integer num : stream) {
+        int m = Integer.MIN_VALUE;
+        for (int num : stream) {
             if (num > m) {
                 m = num;
             }
@@ -52,8 +52,8 @@ public class AsIntStream implements IntStream {
         if (stream.isEmpty()) {
             throw new IllegalArgumentException();
         }
-        Integer m = Integer.MAX_VALUE;
-        for (Integer num : stream) {
+        int m = Integer.MAX_VALUE;
+        for (int num : stream) {
             if (num < m) {
                 m = num;
             }
@@ -72,7 +72,7 @@ public class AsIntStream implements IntStream {
             throw new IllegalArgumentException();
         }
         int s = 0;
-        for (Integer num : stream) {
+        for (int num : stream) {
             s += num;
         }
         return s;
@@ -138,10 +138,5 @@ public class AsIntStream implements IntStream {
             arr[i] = stream.get(i);
         }
         return arr;
-    }
-
-    public static void main(String[] args) {
-        AsIntStream a = new AsIntStream(1, 2, 3, 4);
-        System.out.println(a.average());
     }
 }

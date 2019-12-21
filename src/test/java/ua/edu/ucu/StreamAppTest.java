@@ -111,7 +111,7 @@ public class StreamAppTest {
     public void testReduce() {
         System.out.println("reduce");
         int expResult = 5;
-        int result = intStream.reduce(0, (sum, x) -> sum += x);
+        int result = intStream.reduce(0, (s, x) -> s += x);
         assertEquals(expResult, result);
     }
 }
